@@ -1,6 +1,6 @@
 # RailsOnDocker
 
-__For more detailed information go to [docker documentation]{https://docs.docker.com/compose/rails/}__
+__For more detailed information go to [docker documentation](https://docs.docker.com/compose/rails/)__
 
 ## How to use
 
