@@ -6,7 +6,7 @@ __For more detailed information go to [docker documentation](https://docs.docker
 
 _Obs. After any command that creates or modifies files run:_
 ```
-sudo chown $(id -u):$(id -g) myapp/
+sudo chown -R $(id -u):$(id -g) myapp/
 ```
 
 To generate Rails app run:
