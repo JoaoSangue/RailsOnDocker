@@ -4,7 +4,9 @@ services:
     db:
         image: postgres 
         volumes:
-            - ./myapp/tmp/db:/var/lib/postgresql/data
+            - ./tmp/db:/var/lib/postgresql/data
+        env_file:
+            - ./db.env
 
     web:
         build: .

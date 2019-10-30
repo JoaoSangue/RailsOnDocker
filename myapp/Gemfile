@@ -1,2 +1,2 @@
-source 'https://rubygems.org'
+ource 'https://rubygems.org'
 gem 'rails', '~>6'
