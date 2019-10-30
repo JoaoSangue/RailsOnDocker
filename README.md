@@ -48,7 +48,7 @@ production:
 
 __If *"myapp/config/webpacker.yml"* is not created after the rails new command run:__
 ```
-curl https://raw.githubusercontent.com/rails/webpacker/master/lib/install/config/webpacker.yml > myapp/config/webpacker.yml
+curl https://bit.ly/2q8Dgo4 > myapp/config/webpacker.yml
 ```
 
 
