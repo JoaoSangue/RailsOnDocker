@@ -39,6 +39,12 @@ Change config/database.yml to:
 	  database: myapp_test
 ```
 
+__If *"myapp/config/webpacker.yml"* is not created after the rails new command run:__
+```
+curl https://raw.githubusercontent.com/rails/webpacker/master/lib/install/config/webpacker.yml > myapp/config/webpacker.yml
+```
+
+
 Now boot the app with(_do this anytime you need to start the app_):
 ```
 sudo docker-compose up
