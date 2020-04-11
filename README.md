@@ -14,7 +14,7 @@ Change db.env, so it contains the username and password that postgres will use.
 
 To generate Rails app run:
 ```
-sudo docker-compose run web rails new . --force --no-deps --database=postgresql
+sudo docker-compose run web rails new . --force --database=postgresql
 ```
 
 After any modification in the Gemfile(like after running the last command) or in the Dockerfile run:
@@ -28,14 +28,13 @@ default: &default
 	adapter: postgresql
 	encoding: unicode
 	host: db
-	username: Username
-	password: Password
+	username: <%= ENV[POSTGRES_USER] %>
+	password: <%= ENV[POSTGRES_PASSWORD] %>
 	pool: 5
 
 development:
 	<<: *default
 	database: myapp_development
-
 
 test:
 	<<: *default
@@ -46,23 +45,17 @@ production:
 	database: myapp
 ```
 
-__If *"myapp/config/webpacker.yml"* is not created after the rails new command run:__
-```
-curl https://bit.ly/2q8Dgo4 > myapp/config/webpacker.yml
-```
-
-
 Now boot the app with(_do this anytime you need to start the app_):
 ```
 sudo docker-compose up
 ```
 
+You should be able to see the Rails welcome page by now
+
 To create the database run(_while containers are up_):
 ```
 sudo docker-compose run web rake db:create
 ```
-
-You should be able to see the Rails welcome page by now
 
 To safely stop the application, on the the project directory run:
 ```
