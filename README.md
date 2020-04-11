@@ -13,7 +13,7 @@ Change db.env, so it contains the username and password that postgres will use.
 
 
 To generate Rails app run:
-``
+```
 sudo docker-compose run web bundle install
 sudo docker-compose run web rails new . --force --skip-bundle --database=postgresql
 ```
