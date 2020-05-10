@@ -58,7 +58,7 @@ sudo docker-compose up
 
 To create the database run(_while containers are up_):
 ```
-sudo docker-compose run web rake db:create
+sudo docker-compose exec web rails db:create
 ```
 
 You should be able to see the Rails welcome page by now
