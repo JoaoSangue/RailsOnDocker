@@ -2,6 +2,11 @@
 
 __For more detailed information go to [docker documentation](https://docs.docker.com/compose/rails/)__
 
+### Attention!!!
+
+Never use a database on docker in production. A dockered database serves only for development purposes.
+For more on that topic click [here.](https://myopsblog.wordpress.com/2017/02/06/why-databases-is-not-for-containers/)
+
 ## How to use
 
 _Obs. After any command that creates or modifies files run:_
