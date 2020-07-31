@@ -58,7 +58,7 @@ sudo docker-compose up -d db
 
 And create databases previously defined:
 ```bash
-sudo docker-compose exec web rails db:create
+sudo docker-compose run web rails db:create
 ```
 
 Now boot the app with(_do this anytime you need to start the app_):
