@@ -10,7 +10,7 @@ For more on that topic click [here.](https://myopsblog.wordpress.com/2017/02/06/
 ## How to use
 
 _Obs. After any command that creates or modifies files run:_
-```
+```bash
 sudo chown -R $(id -u):$(id -g) myapp/
 ```
 
@@ -18,18 +18,18 @@ Change db.env, so it contains the username and password that postgres will use.
 
 
 To generate Rails app run:
-```
+```bash
 sudo docker-compose run web bundle install
 sudo docker-compose run web rails new . --force --skip-bundle --database=postgresql
 ```
 
 After any modification in the Gemfile(like after running the last command) or in the Dockerfile run:
-```
+```bash
 sudo docker-compose build
 ```
 
 Change config/database.yml to:
-```
+```yml
 default: &default
     adapter: postgresql
     encoding: unicode
@@ -51,19 +51,29 @@ production:
     database: myapp
 ```
 
-Now boot the app with(_do this anytime you need to start the app_):
-```
-sudo docker-compose up
+Now start the database with:
+```bash
+sudo docker-compose up -d db
 ```
 
-To create the database run(_while containers are up_):
-```
+And create databases previously defined:
+```bash
 sudo docker-compose exec web rails db:create
+```
+
+Now boot the app with(_do this anytime you need to start the app_):
+```bash
+sudo docker-compose up -d
 ```
 
 You should be able to see the Rails welcome page by now
 
 To safely stop the application, on the the project directory run:
-```
+```bash
 sudo docker-compose down
+```
+
+If any command that should do something on a running container fails, to see the logs use:
+```bash
+sudo docker-compose logs
 ```
